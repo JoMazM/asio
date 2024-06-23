@@ -64,6 +64,7 @@ pub fn build(b: *std.Build) void {
         libasio.linkLibCpp(); // LLVM libc++ (builtin)
     }
     libasio.installHeadersDirectory(b.path("asio/include"), "", .{
+        .include_extensions = &.{ ".hpp", ".h", ".ipp" },
         .exclude_extensions = &.{
             "am",
             "gitignore",
